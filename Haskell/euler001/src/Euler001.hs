@@ -8,7 +8,7 @@
 -- NOTE:
 -- Exclusive: Don't count 1000
 -- Only count multiples of 3 or 5 once.
-module Euler001 (euler001, sumMultiples) where
+module Euler001 (euler001, filterMultiples, sumMultiples) where
 
 isMultipleOf :: Int -> Int -> Bool
 isMultipleOf n d = n `rem` d == 0
