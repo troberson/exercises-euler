@@ -1,0 +1,65 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 395d8fc89aff37ad8d6b92d3e43b510d12fe5ce06c55a8f43fdd045d97099c6a
+
+name:           euler005
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/troberson/exercises-euler/tree/master/Haskell#readme>
+homepage:       https://github.com/https://github.com/troberson/exercises-euler#readme
+bug-reports:    https://github.com/https://github.com/troberson/exercises-euler/issues
+author:         Tamara Roberson
+maintainer:     tamara.roberson@gmail.com
+copyright:      2018 Tamara Roberson
+license:        BSD3
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/https://github.com/troberson/exercises-euler
+
+library
+  exposed-modules:
+      Euler005
+  other-modules:
+      Paths_euler005
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , tasty >=1.1 && <2
+    , tasty-hunit >=0.10 && <0.20
+  default-language: Haskell2010
+
+executable euler005-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_euler005
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , euler005
+    , tasty >=1.1 && <2
+    , tasty-hunit >=0.10 && <0.20
+  default-language: Haskell2010
+
+test-suite euler005-test
+  type: exitcode-stdio-1.0
+  main-is: Euler005Test.hs
+  other-modules:
+      Paths_euler005
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , euler005
+    , tasty >=1.1 && <2
+    , tasty-hunit >=0.10 && <0.20
+  default-language: Haskell2010
