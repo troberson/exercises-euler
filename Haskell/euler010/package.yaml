@@ -1,0 +1,43 @@
+name:                euler010
+version:             0.1.0.0
+github:              "https://github.com/troberson/exercises-euler"
+license:             BSD3
+author:              "Tamara Roberson"
+maintainer:          "tamara.roberson@gmail.com"
+copyright:           "2018 Tamara Roberson"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/troberson/exercises-euler/tree/master/Haskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- tasty >= 1.1 && < 2
+- tasty-hunit >= 0.10 && < 0.20
+- data-ordlist >= 0.4 && < 0.5
+
+library:
+  source-dirs: src
+
+executables:
+  euler010-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - euler010
+
+tests:
+  euler010-test:
+    main:                Euler010Test.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - euler010
