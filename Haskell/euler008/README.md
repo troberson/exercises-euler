@@ -1,11 +1,12 @@
 Project Euler - 008 - Largest Product in a Series
-=====================
+=================================================
 The four adjacent digits in the 1000-digit number that have the greatest
 product are
-<a href="https://www.codecogs.com/eqnedit.php?latex=9\cdot9\cdot8\cdot9=5832" target="_blank">
-  <img src="https://latex.codecogs.com/gif.latex?9\cdot9\cdot8\cdot9=5832"
-  alt="9\cdot9\cdot8\cdot9=5832" />
-</a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=9\times9\times8\times9=5832" target="_blank">
+  <img src="https://latex.codecogs.com/gif.latex?9\times9\times8\times9=5832"
+       alt="9\times9\times8\times9=5832"
+       title="9\times9\times8\times9=5832"
+       /></a>
 
 <blockquote><pre>73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
