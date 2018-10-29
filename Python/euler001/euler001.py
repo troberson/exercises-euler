@@ -13,7 +13,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 # Exclusive: Don't count 1000
 # Only count multiples of 3 or 5 once.
 
-from typing import Iterable
+from typing import Iterable as _Iterable
 
 
 __all__ = ["main", "sum_multiples", "filter_multiples"]
@@ -24,25 +24,28 @@ def main() -> int:
     return sum_multiples([3, 5], range(1000))
 
 
-def sum_multiples(mult: Iterable[int], xs: Iterable[int]) -> int:
+def sum_multiples(mult: _Iterable[int], xs: _Iterable[int]) -> int:
     """Return the sum of all numbers within 'xs' which are multiples of any numbers
     in 'mult'."""
     return sum(filter_multiples(mult, xs))
 
 
-def filter_multiples(mult: Iterable[int], xs: Iterable[int]) -> Iterable[int]:
+def filter_multiples(
+        mult: _Iterable[int],
+        xs: _Iterable[int]
+        ) -> _Iterable[int]:
     """Return the list of numbers within 'xs' which are multiples of any numbers
     in 'mult'."""
-    return [x for x in xs if x_is_multiple_of_any(x, mult)]
+    return [x for x in xs if _x_is_multiple_of_any(x, mult)]
 
 
-def x_is_multiple_of_any(x: int, ys: Iterable[int]) -> bool:
-    return any([x_is_multiple_of_y(x, y) for y in ys])
+def _x_is_multiple_of_any(x: int, ys: _Iterable[int]) -> bool:
+    return any([_x_is_multiple_of_y(x, y) for y in ys])
 
 
-def x_is_multiple_of_y(x: int, y: int) -> bool:
+def _x_is_multiple_of_y(x: int, y: int) -> bool:
     return x % y == 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(main())
