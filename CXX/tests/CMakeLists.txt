@@ -9,10 +9,11 @@ FetchContent_MakeAvailable(catch2)
 add_executable(euler_test
     test_main.cpp
     euler001_test.cpp
+    euler002_test.cpp
 )
 
 # I'm using C++17 in the test
-# target_compile_features(euler_test PRIVATE cxx_std_17)
+target_compile_features(euler_test PRIVATE cxx_std_17)
 
 # Should be linked to the main library, as well as the Catch2 testing library
 target_link_libraries(euler_test PRIVATE euler_utils euler Catch2::Catch2)

@@ -1,6 +1,7 @@
 add_executable(euler_utils_test
     ../test_main.cpp
     sumMult_test.cpp
+    recurrence_test.cpp
 )
 
 # I'm using C++17 in the test
