@@ -1,28 +1,30 @@
 Project Euler - C++ 
 =======================
 
-Each exercise is a separate CMake project.
+These exercises are a single CMake project.
 
 Building
 --------
-To build a project, run
+To build, run
 ```
-cd euler001
 mkdir build
 cd build
 cmake ..
+make
 ```
 
 Testing
 -------
-To test, run `ctest` from the build directory. 
+Tests require Catch2, which will be automatically downloaded from GitHub. To run tests,
+execute `ctest` from the build directory. The `tests` directory has `euler_test` and
+`utils_tests/euler_utils_tests` for more granular testing.
 
-The tests are usually simply the one given in the problem description and then
-the correct answer, once known.
+The tests for the problems are usually simply the one given in the description and then
+the correct answer, once known. Utility functions have more extensive tests.
 
 Running
 -------
-The binaries are in "bin/" under the build directory. Running them will simply print out the answer to the problem.
+Currently, only tests are supported.
 
 Reminder
 --------
