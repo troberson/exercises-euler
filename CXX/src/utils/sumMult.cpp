@@ -7,18 +7,21 @@
  */
 
 /*
- * The brute-force method would be to list all the numbers under 1000 which
- * are multiples of 3, sum those, add those which are multiples of 5, and
- * subtract those which are multiples of 15.
+ * These methods use strategy attributed to the child Gauss for finding the
+ * sum of a series of natural numbers: n(n-1)/2. So, for example, the sum of
+ * the numbers 1 to 100 are 100*101/2 = 5050.
  *
- * However, we can also use the method attributed to the child Gauss for
- * finding the sum of a series of natural numbers: n(n-1)/2. So, for example,
- * the sum of the numbers 1 to 100 are 100*101/2 = 5050.
+ * To sum only multiples of a particular number, we divide the maximum number,
+ * n, by the number we want to use multiples of, or 'step', (we only need the
+ * integer floor) and we use this number, call it n', in place of n.
+ * Multiplying the step by the new equation n'(n'-1)/2 gives us the sum.
  *
- * The set of numbers under 1000 divisible by 3 can be described as
- * { 3n | for 0 <= n < floor(999/2) } so therefore the sum of the numbers
- * under 1000 divisible by 3 is 3*333*334/2, for 5, it is
- * 5*199*20=0/5, and for 15, 15*66*67/2.
+ * To sum only multiples of two different numbers, we find the sum as above for
+ * each step individually, then find the sum using the product of the two sums.
+ * Adding the two step sums and subtracting the product sum gives us the final
+ * total. If we wanted to include additional steps, we would follow the
+ * Principle of Inclusion-Exclusion and alternately subtract and add sums as
+ * required.
  */
 
 #include <euler/utils/sumMult.hpp>
@@ -67,4 +70,3 @@ unsigned int sumMult(unsigned int max, unsigned int step_a, int step_b)
 {
   return sumMult(max, step_a) + sumMult(max, step_b) - sumMult(max, step_a * step_b);
 }
-
