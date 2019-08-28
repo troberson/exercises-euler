@@ -6,17 +6,19 @@
  * Functions for finding prime numbers.
  */
 
-#include <euler/utils/primes.hpp>
+#include <type_traits>
 
 /**
  * Check if a number is prime.
  *
+ * Valid for any integral type (int, long, unsigned int, etc.).
  * Uses trial division.
  *
  * @param n number to check
  * @returns true if number is prime, false otherwise
  */
-bool isPrime(int n)
+template <typename T, typename = IsIntegral<T>>
+bool isPrime(T n)
 {
     // Negative numbers, 0, and 1 are not prime
     if (n < 2)

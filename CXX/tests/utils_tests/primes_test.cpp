@@ -24,3 +24,8 @@ TEST_CASE("1 is not prime")
 {
     REQUIRE(!isPrime(1));
 }
+
+TEST_CASE("Long number prime check")
+{
+    REQUIRE(isPrime(79L));
+}
