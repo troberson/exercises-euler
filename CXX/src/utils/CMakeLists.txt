@@ -6,12 +6,14 @@
 # file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/include/modern/*.hpp")
 set(header_dir "${Euler_SOURCE_DIR}/include/euler/utils/")
 set(HEADER_LIST
+    ${header_dir}/primes.hpp
     ${header_dir}/sumMult.hpp
     ${header_dir}/recurrence.hpp
 )
 
 # Make an automatic library - will be static or dynamic based on user setting
 add_library(euler_utils
+    primes.cpp
     sumMult.cpp
     recurrence.cpp
     ${HEADER_LIST}

@@ -1,5 +1,6 @@
 add_executable(euler_utils_test
     ../test_main.cpp
+    primes_test.cpp
     sumMult_test.cpp
     recurrence_test.cpp
 )
