@@ -1,6 +1,7 @@
 add_executable(euler_utils_test
     ../test_main.cpp
     factors_test.cpp
+    maths_test.cpp
     primes_test.cpp
     strings_test.cpp
     sumMult_test.cpp
