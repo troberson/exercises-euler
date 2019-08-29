@@ -11,8 +11,10 @@
 #include <vector>
 #include <functional>
 
-using namespace std;
+std::vector<int> recurrenceUpTo(
+    int n, std::function<int(int)> fn, int start_a);
 
-vector<int> recurrenceUpTo(int n, function<int(int)> fn, int start_a);
-vector<int> recurrenceUpTo(int n, function<int(int, int)> fn, int start_a, int start_b);
-vector<int> fibonacciUpTo(int n);
+std::vector<int> recurrenceUpTo(
+    int n, std::function<int(int, int)> fn, int start_a, int start_b);
+
+std::vector<int> fibonacciUpTo(int n);

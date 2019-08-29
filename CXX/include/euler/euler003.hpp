@@ -8,7 +8,5 @@
 
 #include <vector>
 
-using namespace std;
-
-vector<int> euler003_example();
+std::vector<int> euler003_example();
 int euler003();

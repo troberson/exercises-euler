@@ -11,8 +11,6 @@
 
 #include <vector>
 
-using namespace std;
-
 
 /**
  * Solves the example problem.
@@ -21,7 +19,7 @@ using namespace std;
  *
  * @returns the solution to the problem.
  */
-vector<int> euler003_example()
+std::vector<int> euler003_example()
 {
    return factor(13195, true);
 }

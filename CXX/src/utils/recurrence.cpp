@@ -12,7 +12,6 @@
 #include <numeric>
 #include <functional>
 
-using namespace std;
 
 /**
  * Generate a vector from a recurrence relation which includes entries up to a given value.
@@ -22,9 +21,9 @@ using namespace std;
  * @param start_a the first entry of the sequence
  * @returns a vector
  */
-vector<int> recurrenceUpTo(int n, function<int(int)> fn, int start_a)
+std::vector<int> recurrenceUpTo(int n, std::function<int(int)> fn, int start_a)
 {
-    vector<int> v;
+    std::vector<int> v;
 
     v.push_back(start_a);
 
@@ -48,9 +47,10 @@ vector<int> recurrenceUpTo(int n, function<int(int)> fn, int start_a)
  * @param start_b the second entry of the sequence
  * @returns a vector
  */
-vector<int> recurrenceUpTo(int n, function<int(int, int)> fn, int start_a, int start_b)
+std::vector<int> recurrenceUpTo(
+    int n, std::function<int(int, int)> fn, int start_a, int start_b)
 {
-    vector<int> v;
+    std::vector<int> v;
 
     v.push_back(start_a);
     v.push_back(start_b);
@@ -73,8 +73,7 @@ vector<int> recurrenceUpTo(int n, function<int(int, int)> fn, int start_a, int s
  * @param n the maximum value (inclusive)
  * @returns a vector
  */
-vector<int> fibonacciUpTo(int n)
+std::vector<int> fibonacciUpTo(int n)
 {
-    return recurrenceUpTo(n, plus<int>(), 1, 2);
+    return recurrenceUpTo(n, std::plus<int>(), 1, 2);
 }
-

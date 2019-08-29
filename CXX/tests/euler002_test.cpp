@@ -10,7 +10,7 @@
 
 TEST_CASE("Euler 002: Example is correct")
 {
-    vector<int> fibs = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
+    std::vector<int> fibs = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
     REQUIRE(euler002_example() == fibs);
 }
 

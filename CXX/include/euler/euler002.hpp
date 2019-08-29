@@ -6,7 +6,5 @@
 
 #include <vector>
 
-using namespace std;
-
-vector<int> euler002_example();
+std::vector<int> euler002_example();
 int euler002();
