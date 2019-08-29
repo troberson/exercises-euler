@@ -10,6 +10,7 @@ set(HEADER_LIST
     ${header_dir}/factors.tpp
     ${header_dir}/primes.hpp
     ${header_dir}/primes.tpp
+    ${header_dir}/strings.hpp
     ${header_dir}/sumMult.hpp
     ${header_dir}/template_types.hpp
     ${header_dir}/recurrence.hpp
@@ -17,6 +18,7 @@ set(HEADER_LIST
 
 # Make an automatic library - will be static or dynamic based on user setting
 add_library(euler_utils
+    strings.cpp
     sumMult.cpp
     recurrence.cpp
     ${HEADER_LIST}
