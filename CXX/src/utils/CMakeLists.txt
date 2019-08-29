@@ -6,6 +6,8 @@
 # file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/include/modern/*.hpp")
 set(header_dir "${Euler_SOURCE_DIR}/include/euler/utils/")
 set(HEADER_LIST
+    ${header_dir}/factors.hpp
+    ${header_dir}/factors.tpp
     ${header_dir}/primes.hpp
     ${header_dir}/primes.tpp
     ${header_dir}/sumMult.hpp
