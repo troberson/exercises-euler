@@ -6,7 +6,12 @@
  * Functions for finding prime numbers.
  */
 
-#include <type_traits>
+#pragma once
+
+#include "template_types.hpp"
+
+#include <limits> // std::numeric_limits
+
 
 /**
  * Check if a number is prime.
@@ -49,4 +54,44 @@ bool isPrime(T n)
 
     // Did not find a divisor, number is prime
     return true;
+}
+
+
+/**
+ * Find next prime
+ *
+ * @param start number to start from
+ * @returns a prime number or 0 if max size of type is reached
+ */
+template <typename T, typename = IsIntegral<T>>
+T findNextPrime(T start)
+{
+    // The first prime number is 2
+    if (start < 2)
+    {
+        return 2;
+    }
+
+    // Start searching from the next number after the one
+    // we are given
+    start++;
+
+    // Start on an odd number, so we can only test odd numbers
+    if (start % 2 == 0)
+    {
+        start++;
+    }
+
+    // Search for the next prime number
+    T max = std::numeric_limits<T>::max();
+    for (int i = start; i <= max; i += 2)
+    {
+        if (isPrime(i))
+        {
+            return i;
+        }
+    }
+
+    // return 0 if we hit the maximum of the type without reaching another prime number
+    return 0;
 }

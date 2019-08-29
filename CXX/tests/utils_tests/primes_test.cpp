@@ -10,6 +10,7 @@
 
 #include <catch2/catch.hpp>
 
+// isPrime(n)
 TEST_CASE("42 is not prime")
 {
     REQUIRE(!isPrime(42));
@@ -28,4 +29,20 @@ TEST_CASE("1 is not prime")
 TEST_CASE("Long number prime check")
 {
     REQUIRE(isPrime(79L));
+}
+
+// findNextPrime(start)
+TEST_CASE("First prime nuber is 2")
+{
+    REQUIRE(findNextPrime(0) == 2);
+}
+
+TEST_CASE("The next prime number after 7 is 11")
+{
+    REQUIRE(findNextPrime(7) == 11);
+}
+
+TEST_CASE("There are no prime numbers between 251 and 255 (uint8_t aka byte)")
+{
+    REQUIRE(findNextPrime((uint8_t) 251) == (uint8_t) 0);
 }

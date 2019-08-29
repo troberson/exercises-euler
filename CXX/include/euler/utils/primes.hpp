@@ -8,12 +8,12 @@
 
 #pragma once
 
-#include <type_traits>
-
-template <typename T>
-using IsIntegral = std::enable_if_t<std::is_integral_v<T>>;
+#include "template_types.hpp"
 
 template <typename T, typename = IsIntegral<T>>
 bool isPrime(T n);
+
+template <typename T, typename = IsIntegral<T>>
+T findNextPrime(T start);
 
 #include "primes.tpp"

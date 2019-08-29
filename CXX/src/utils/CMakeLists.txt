@@ -9,6 +9,7 @@ set(HEADER_LIST
     ${header_dir}/primes.hpp
     ${header_dir}/primes.tpp
     ${header_dir}/sumMult.hpp
+    ${header_dir}/template_types.hpp
     ${header_dir}/recurrence.hpp
 )
 
