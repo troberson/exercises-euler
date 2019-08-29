@@ -10,6 +10,7 @@ add_executable(euler_test
     test_main.cpp
     euler001_test.cpp
     euler002_test.cpp
+    euler003_test.cpp
 )
 
 # I'm using C++17 in the test
