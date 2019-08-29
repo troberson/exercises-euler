@@ -4,6 +4,16 @@
 # Works with 3.11 and tested through 3.15
 cmake_minimum_required(VERSION 3.11...3.15)
 
+# Run clang-tidy on all code
+# Exclude llvm-header-guard because it doesn't support #pragma once
+# Exclude Google Fuchsia-specific rules
+set(CMAKE_CXX_CLANG_TIDY
+    clang-tidy;
+    -header-filter=.;
+    -checks=*,-llvm-header-guard,-fuchsia-*;
+)
+
+
 # Project name and a few useful settings. Other commands can pick up the results
 project(Euler
     VERSION 0.1

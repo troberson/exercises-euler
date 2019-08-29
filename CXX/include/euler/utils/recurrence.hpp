@@ -8,13 +8,13 @@
 
 #pragma once
 
-#include <vector>
 #include <functional>
+#include <vector>
 
 std::vector<int> recurrenceUpTo(
-    int n, std::function<int(int)> fn, int start_a);
+    int n, const std::function<int(int)>& fn, int start_a);
 
 std::vector<int> recurrenceUpTo(
-    int n, std::function<int(int, int)> fn, int start_a, int start_b);
+    int n, const std::function<int(int, int)>& fn, int start_a, int start_b);
 
 std::vector<int> fibonacciUpTo(int n);

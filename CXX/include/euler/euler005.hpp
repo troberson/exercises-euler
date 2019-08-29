@@ -4,5 +4,7 @@
  * Copyright (c) 2019 Tamara Roberson
  */
 
+#pragma once
+
 int euler005_example();
 int euler005();

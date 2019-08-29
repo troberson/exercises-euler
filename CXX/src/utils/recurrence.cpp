@@ -8,9 +8,9 @@
 
 #include <euler/utils/recurrence.hpp>
 
-#include <vector>
-#include <numeric>
 #include <functional>
+#include <numeric>
+#include <vector>
 
 
 /**
@@ -21,7 +21,7 @@
  * @param start_a the first entry of the sequence
  * @returns a vector
  */
-std::vector<int> recurrenceUpTo(int n, std::function<int(int)> fn, int start_a)
+std::vector<int> recurrenceUpTo(int n, const std::function<int(int)>& fn, int start_a)
 {
     std::vector<int> v;
 
@@ -48,7 +48,7 @@ std::vector<int> recurrenceUpTo(int n, std::function<int(int)> fn, int start_a)
  * @returns a vector
  */
 std::vector<int> recurrenceUpTo(
-    int n, std::function<int(int, int)> fn, int start_a, int start_b)
+    int n, const std::function<int(int, int)>& fn, int start_a, int start_b)
 {
     std::vector<int> v;
 
@@ -75,5 +75,5 @@ std::vector<int> recurrenceUpTo(
  */
 std::vector<int> fibonacciUpTo(int n)
 {
-    return recurrenceUpTo(n, std::plus<int>(), 1, 2);
+    return recurrenceUpTo(n, std::plus<>(), 1, 2);
 }

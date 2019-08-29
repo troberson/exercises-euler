@@ -8,14 +8,14 @@
 
 #pragma once
 
-#include "template_types.hpp"
 #include "primes.hpp"
+#include "template_types.hpp"
 
 #include <algorithm> // std::sort, std::transform
 #include <functional> // std::negate
 #include <vector> // std::vector
 
-#include <iostream>
+
 /**
  * Find the factors of a number
  *
