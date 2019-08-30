@@ -13,6 +13,11 @@ cmake ..
 make
 ```
 
+Documentation
+-------------
+Documentation requires Doxygen. To view HTML documentation, load
+`build/docs/doxygen/html/index.html` in your web browser.
+
 Testing
 -------
 Tests require Catch2, which will be automatically downloaded from GitHub. To run tests,

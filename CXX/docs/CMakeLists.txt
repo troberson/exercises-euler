@@ -1,0 +1,43 @@
+# Adapted from https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/
+
+cmake_minimum_required(VERSION 3.11...3.15)
+
+###
+### Doxygen
+###
+find_package(Doxygen REQUIRED)
+
+# Find all the public headers
+get_target_property(EULER_PUBLIC_HEADER_DIR euler INTERFACE_INCLUDE_DIRECTORIES)
+file(GLOB_RECURSE EULER_PUBLIC_HEADERS ${EULER_PUBLIC_HEADER_DIR}/*.hpp)
+
+set(DOXYGEN_INPUT_DIR ${PROJECT_SOURCE_DIR})
+set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR}/doxygen)
+set(DOXYGEN_INDEX_FILE ${DOXYGEN_OUTPUT_DIR}/xml/index.xml)
+set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+set(README_FILE ${PROJECT_SOURCE_DIR}/README.md)
+
+# Exclude the build directory and the docs directory
+set(DOXYGEN_EXCLUDE "${PROJECT_SOURCE_DIR}/build ${PROJECT_SOURCE_DIR}/docs")
+
+# Replace variables inside @@ with the current values
+configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+# Doxygen won't create this for us
+file(MAKE_DIRECTORY ${DOXYGEN_OUTPUT_DIR})
+
+# Doxygen dependencies
+# When any of these files are changed, Doxygen will be regenerated
+set(DOXYGEN_DEPENDS ${EULER_PUBLIC_HEADERS} ${README_FILE})
+
+# Only regenerate Doxygen when the Doxyfile or public headers change
+add_custom_command(OUTPUT ${DOXYGEN_INDEX_FILE}
+                   DEPENDS ${README_FILE}
+                   COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
+                   MAIN_DEPENDENCY ${DOXYFILE_OUT} ${DOXYFILE_IN}
+                   COMMENT "Generating docs"
+                   VERBATIM)
+
+# Nice named target so we can run the job easily
+add_custom_target(Doxygen ALL DEPENDS ${DOXYGEN_INDEX_FILE})
