@@ -10,4 +10,17 @@
 
 #include <string>
 
+
+/**
+ * Check whether a string is a palindrome.
+ *
+ * A palindrome is a string of characters that reads the same
+ * forwards as backwards.
+ *
+ * @note The current implementation requires no extra characters, such as
+ *  spaces or punctuation.
+ *
+ * @param str the string to check
+ * @returns true if string is a palindrome, false otherwise
+ */
 bool isPalindrome(std::string str);

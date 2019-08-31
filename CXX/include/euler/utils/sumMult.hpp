@@ -13,11 +13,12 @@
  * Sum the integers between 0 and the given max (exclusive)
  * which are multiples of `step`.
  *
- * Example:
+ * @rst
+ * **Example:** `sumMult(10, 2)`
  *
- *     sumMult(10, 2)
- *
- * This returns 20 because 2 + 4 + 6 + 8 = 20.
+ * This returns 20 because the sum of multiples of 2 between 0 and
+ * 10 are :math:`2 + 4 + 6 + 8 = 20`.
+ * @endrst
  *
  * @param max the maximum (exclusive) number to include in the sum
  * @param step include integers which are multiples of `step`
@@ -29,15 +30,16 @@ unsigned int sumMult(unsigned int max, unsigned int step);
 /**
  * Sum the integers between 0 and the given max (exclusive)
  * which are multiples of either `step_a` or `step_b`.
- *
- * Example:
- *
- *     sumMult(10, 2, 3)
+ * @rst
+ * **Example**: `sumMult(10, 2, 3)`
  *
  * This returns 32 because:
- * 2 + 4 + 6 + 8 = 20
- * 3 + 6 + 9 = 18
- * 20 + 18 - 6 (factor of both 2 and 3) = 32
+ *
+ * .. math::
+ *     2 +  4 + 6 + 8 & = 20 \text{ (sum of multiples of 2 between 0 and 10)}\\
+ *     3 +  6 + 9     & = 18 \text{ (sum of multiples of 3 between 0 and 10)}\\
+ *    20 + 18 - 6     & = 32 \text{ (add the sums and subtract 6, which is a factor of both)}
+ * @endrst
  *
  * @param max the maximum (exclusive) number to include in the sum
  * @param step_a include integers which are multiples of `step_a`

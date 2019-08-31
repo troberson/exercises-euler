@@ -19,7 +19,7 @@
 /**
  * Find the factors of a number
  *
- * Note: `includeNegative` is always true if n is negative
+ * @note `includeNegative` is always true if `n` is negative
  *
  * @param n the number to factor
  * @param prime only look for prime factors (default: false)

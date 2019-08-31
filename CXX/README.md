@@ -15,8 +15,11 @@ make
 
 Documentation
 -------------
-Documentation requires Doxygen. To view HTML documentation, load
-`build/docs/doxygen/html/index.html` in your web browser.
+Documentation requires Doxygen, Sphinx, Breathe, and Exhale. To view HTML
+documentation, load `build/docs/doxygen/html/index.html` or
+`build/docs/sphinx/index.html` in your web browser. Doxygen is more
+complete but Sphinx looks better. Sphinx has difficulty with function overloads.
+Sphinx formatting directives appear unformatted in Doxygen.
 
 Testing
 -------
