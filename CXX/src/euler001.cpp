@@ -30,25 +30,15 @@
  * 5*199*20=0/5, and for 15, 15*66*67/2.
  */
 
-
-
 #include <euler/utils/sumMult.hpp>
 
-/**
- * Solves the example problem.
- *
- * @returns the solution to the problem.
- */
+
 unsigned int euler001_example()
 {
   return sumMult(10, 3, 5);
 }
 
-/**
- * Solves the problem.
- *
- * @returns the solution to the problem.
- */
+
 unsigned int euler001()
 {
   return sumMult(1000, 3, 5);

@@ -12,26 +12,12 @@
 #include <vector>
 
 
-/**
- * Solves the example problem.
- *
- * The prime factors of 13195 are 5, 7, 13 and 29.
- *
- * @returns the solution to the problem.
- */
 std::vector<int> euler003_example()
 {
    return factor(13195, true);
 }
 
 
-/**
- * Solves the problem.
- *
- * What is the largest prime factor of the number 600851475143?
-*
- * @returns the solution to the problem
- */
 int euler003()
 {
     auto facts = factor(600851475143, true);

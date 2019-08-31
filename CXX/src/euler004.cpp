@@ -38,27 +38,12 @@ int findLargestPalindromeProduct(int start, int end)
 }
 
 
-/**
- * Solves the example problem.
- *
- * A palindromic number reads the same both ways. The largest palindrome made
- * from the product of two 2-digit numbers is 9009 = 91 × 99.
- *
- * @returns the solution to the problem.
- */
 int euler004_example()
 {
     return findLargestPalindromeProduct(10, 99);
 }
 
 
-/**
- * Solves the problem.
- *
- * Find the largest palindrome made from the product of two 3-digit numbers.
- *
- * @returns the solution to the problem
- */
 int euler004()
 {
     return findLargestPalindromeProduct(100, 999);
