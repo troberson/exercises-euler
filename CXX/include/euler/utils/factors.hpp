@@ -76,7 +76,7 @@ std::vector<T> factor(T n, bool prime = false, bool includeNegative = false)
         if (prime)
         {
             // Factor isn't prime, continue
-            if (!isPrime(i))
+            if (!is_prime(i))
             {
                 continue;
             }

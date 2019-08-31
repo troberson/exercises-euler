@@ -50,13 +50,13 @@
 
 std::vector<int> euler002_example()
 {
-    return fibonacciUpTo(100);
+    return fibonacci_up_to(100);
 }
 
 
 int euler002()
 {
     auto genNext = [](int a, int b) { return 4 * a + b; };
-    auto v = recurrenceUpTo(4000000, genNext, 2, 8);
+    auto v = recurrence_up_to(4000000, genNext, 2, 8);
     return std::accumulate(v.begin(), v.end(), 0);
 }

@@ -1,5 +1,5 @@
 /*
- * Project Euler - Utils - sumMult
+ * Project Euler - Utils - sum_mult
  * Tamara Roberson <tamara.roberson@gmail.com>
  * Copyright (c) 2019 Tamara Roberson
  *
@@ -14,7 +14,7 @@
  * which are multiples of `step`.
  *
  * @rst
- * **Example:** `sumMult(10, 2)`
+ * **Example:** `sum_mult(10, 2)`
  *
  * This returns 20 because the sum of multiples of 2 between 0 and
  * 10 are :math:`2 + 4 + 6 + 8 = 20`.
@@ -24,14 +24,14 @@
  * @param step include integers which are multiples of `step`
  * @returns sum of integers
  */
-unsigned int sumMult(unsigned int max, unsigned int step);
+unsigned int sum_mult(unsigned int max, unsigned int step);
 
 
 /**
  * Sum the integers between 0 and the given max (exclusive)
  * which are multiples of either `step_a` or `step_b`.
  * @rst
- * **Example**: `sumMult(10, 2, 3)`
+ * **Example**: `sum_mult(10, 2, 3)`
  *
  * This returns 32 because:
  *
@@ -46,4 +46,4 @@ unsigned int sumMult(unsigned int max, unsigned int step);
  * @param step_b include integers which are multiples of `step_a`
  * @returns sum of integers
  */
-unsigned int sumMult(unsigned int max, unsigned int step_a, int step_b);
+unsigned int sum_mult(unsigned int max, unsigned int step_a, int step_b);

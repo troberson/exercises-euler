@@ -13,7 +13,7 @@
 #include <vector>
 
 
-std::vector<int> recurrenceUpTo(int n, const std::function<int(int)>& fn, int start_a)
+std::vector<int> recurrence_up_to(int n, const std::function<int(int)>& fn, int start_a)
 {
     std::vector<int> v;
 
@@ -31,7 +31,7 @@ std::vector<int> recurrenceUpTo(int n, const std::function<int(int)>& fn, int st
 }
 
 
-std::vector<int> recurrenceUpTo(
+std::vector<int> recurrence_up_to(
     int n, const std::function<int(int, int)>& fn, int start_a, int start_b)
 {
     std::vector<int> v;
@@ -51,7 +51,7 @@ std::vector<int> recurrenceUpTo(
 }
 
 
-std::vector<int> fibonacciUpTo(int n)
+std::vector<int> fibonacci_up_to(int n)
 {
-    return recurrenceUpTo(n, std::plus<>(), 1, 2);
+    return recurrence_up_to(n, std::plus<>(), 1, 2);
 }

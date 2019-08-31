@@ -23,4 +23,4 @@
  * @param str the string to check
  * @returns true if string is a palindrome, false otherwise
  */
-bool isPalindrome(std::string str);
+bool is_palindrome(std::string str);

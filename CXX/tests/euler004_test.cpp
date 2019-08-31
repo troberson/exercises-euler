@@ -8,21 +8,21 @@
 
 #include <catch2/catch.hpp>
 
-// isPalindrome(num)
+// is_palindrome(num)
 TEST_CASE("Palindromic number: 1234321")
 {
-    REQUIRE(isPalindrome(1234321));
+    REQUIRE(is_palindrome(1234321));
 }
 
 TEST_CASE("Not a palindromic number: 123456789")
 {
-    REQUIRE(!isPalindrome(123456789));
+    REQUIRE(!is_palindrome(123456789));
 }
 
-// findLargestPalindromeProduct(start, end)
+// find_largest_palindrome_product(start, end)
 TEST_CASE("Largest palindromic product from 10 to 19")
 {
-    REQUIRE(findLargestPalindromeProduct(10, 19) == 323);
+    REQUIRE(find_largest_palindrome_product(10, 19) == 323);
 }
 
 

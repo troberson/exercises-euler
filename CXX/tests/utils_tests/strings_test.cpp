@@ -10,18 +10,18 @@
 
 #include <catch2/catch.hpp>
 
-// isPalindrome(str)
+// is_palindrome(str)
 TEST_CASE("A palidrome: kayak")
 {
-    REQUIRE(isPalindrome("kayak"));
+    REQUIRE(is_palindrome("kayak"));
 }
 
 TEST_CASE("Not a palindrome: canoe")
 {
-    REQUIRE(!isPalindrome("canoe"));
+    REQUIRE(!is_palindrome("canoe"));
 }
 
 TEST_CASE("An empty string is not a palindrome")
 {
-    REQUIRE(!isPalindrome(""));
+    REQUIRE(!is_palindrome(""));
 }

@@ -10,7 +10,7 @@
 
 #include <string> // std::string
 
-bool isPalindrome(std::string str)
+bool is_palindrome(std::string str)
 {
     // an empty string is not a palindrome
     if (str.empty())

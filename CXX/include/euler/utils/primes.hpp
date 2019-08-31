@@ -23,7 +23,7 @@
  * @returns true if number is prime, false otherwise
  */
 template <typename T, typename = IsIntegral<T>>
-bool isPrime(T n)
+bool is_prime(T n)
 {
     // Negative numbers, 0, and 1 are not prime
     if (n < 2)
@@ -64,7 +64,7 @@ bool isPrime(T n)
  * @returns a prime number or 0 if max size of type is reached
  */
 template <typename T, typename = IsIntegral<T>>
-T findNextPrime(T start)
+T find_next_prime(T start)
 {
     // The first prime number is 2
     if (start < 2)
@@ -86,7 +86,7 @@ T findNextPrime(T start)
     T max = std::numeric_limits<T>::max();
     for (int i = start; i <= max; i += 2)
     {
-        if (isPrime(i))
+        if (is_prime(i))
         {
             return i;
         }

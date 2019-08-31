@@ -13,12 +13,12 @@
 
 #include <string> // std::to_string
 
-bool isPalindrome(int num)
+bool is_palindrome(int num)
 {
-    return isPalindrome(std::to_string(num));
+    return is_palindrome(std::to_string(num));
 }
 
-int findLargestPalindromeProduct(int start, int end)
+int find_largest_palindrome_product(int start, int end)
 {
     int largest = 0;
 
@@ -27,7 +27,7 @@ int findLargestPalindromeProduct(int start, int end)
         for (int j = start; j <= end; j++)
         {
             int product = i * j;
-            if (isPalindrome(product) && product > largest)
+            if (is_palindrome(product) && product > largest)
             {
                 largest = product;
             }
@@ -40,11 +40,11 @@ int findLargestPalindromeProduct(int start, int end)
 
 int euler004_example()
 {
-    return findLargestPalindromeProduct(10, 99);
+    return find_largest_palindrome_product(10, 99);
 }
 
 
 int euler004()
 {
-    return findLargestPalindromeProduct(100, 999);
+    return find_largest_palindrome_product(100, 999);
 }

@@ -21,7 +21,7 @@
  * @param num the number to check
  * @returns true if number is a palindrome, false otherwise
  */
-bool isPalindrome(int num);
+bool is_palindrome(int num);
 
 
 /**
@@ -34,7 +34,7 @@ bool isPalindrome(int num);
  * @param end the number to end at (inclusive)
  * @returns the largest product which is a palindrome.
  */
-int findLargestPalindromeProduct(int start, int end);
+int find_largest_palindrome_product(int start, int end);
 
 /**
  * Solves the example problem.

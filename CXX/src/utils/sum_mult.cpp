@@ -1,5 +1,5 @@
 /*
- * Project Euler - Utils - sumMult
+ * Project Euler - Utils - sum_mult
  * Tamara Roberson <tamara.roberson@gmail.com>
  * Copyright (c) 2019 Tamara Roberson
  *
@@ -24,16 +24,16 @@
  * required.
  */
 
-#include <euler/utils/sumMult.hpp>
+#include <euler/utils/sum_mult.hpp>
 
-unsigned int sumMult(unsigned int max, unsigned int step)
+unsigned int sum_mult(unsigned int max, unsigned int step)
 {
   int n = (max - 1) / step;
   return step * n * (n + 1) / 2;
 }
 
 
-unsigned int sumMult(unsigned int max, unsigned int step_a, int step_b)
+unsigned int sum_mult(unsigned int max, unsigned int step_a, int step_b)
 {
-  return sumMult(max, step_a) + sumMult(max, step_b) - sumMult(max, step_a * step_b);
+  return sum_mult(max, step_a) + sum_mult(max, step_b) - sum_mult(max, step_a * step_b);
 }

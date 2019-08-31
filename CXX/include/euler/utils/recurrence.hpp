@@ -19,7 +19,7 @@
  * @param start_a the first entry of the sequence
  * @returns a vector
  */
-std::vector<int> recurrenceUpTo(
+std::vector<int> recurrence_up_to(
     int n, const std::function<int(int)>& fn, int start_a);
 
 /**
@@ -31,7 +31,7 @@ std::vector<int> recurrenceUpTo(
  * @param start_b the second entry of the sequence
  * @returns a vector
  */
-std::vector<int> recurrenceUpTo(
+std::vector<int> recurrence_up_to(
     int n, const std::function<int(int, int)>& fn, int start_a, int start_b);
 
 /**
@@ -40,4 +40,4 @@ std::vector<int> recurrenceUpTo(
  * @param n the maximum value (inclusive)
  * @returns a vector
  */
-std::vector<int> fibonacciUpTo(int n);
+std::vector<int> fibonacci_up_to(int n);

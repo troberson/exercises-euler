@@ -10,39 +10,39 @@
 
 #include <catch2/catch.hpp>
 
-// isPrime(n)
+// is_prime(n)
 TEST_CASE("42 is not prime")
 {
-    REQUIRE(!isPrime(42));
+    REQUIRE(!is_prime(42));
 }
 
 TEST_CASE("13 is prime")
 {
-    REQUIRE(isPrime(13));
+    REQUIRE(is_prime(13));
 }
 
 TEST_CASE("1 is not prime")
 {
-    REQUIRE(!isPrime(1));
+    REQUIRE(!is_prime(1));
 }
 
 TEST_CASE("Long number prime check")
 {
-    REQUIRE(isPrime(79L));
+    REQUIRE(is_prime(79L));
 }
 
-// findNextPrime(start)
+// find_next_prime(start)
 TEST_CASE("First prime nuber is 2")
 {
-    REQUIRE(findNextPrime(0) == 2);
+    REQUIRE(find_next_prime(0) == 2);
 }
 
 TEST_CASE("The next prime number after 7 is 11")
 {
-    REQUIRE(findNextPrime(7) == 11);
+    REQUIRE(find_next_prime(7) == 11);
 }
 
 TEST_CASE("There are no prime numbers between 251 and 255 (uint8_t aka byte)")
 {
-    REQUIRE(findNextPrime((uint8_t) 251) == (uint8_t) 0);
+    REQUIRE(find_next_prime((uint8_t) 251) == (uint8_t) 0);
 }
