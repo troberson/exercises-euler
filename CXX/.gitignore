@@ -1,1 +1,4 @@
 build/
+docs/api
+docs/_build
+docs/doxyoutput
