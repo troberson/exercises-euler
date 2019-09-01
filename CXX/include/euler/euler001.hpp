@@ -15,6 +15,10 @@
 
 #pragma once
 
+
+namespace euler
+{
+
 /**
  * Solves the example problem.
  *
@@ -34,3 +38,5 @@ unsigned int euler001();
  * @returns the solution to the problem.
  */
 unsigned int euler001_example();
+
+} // end namespace euler

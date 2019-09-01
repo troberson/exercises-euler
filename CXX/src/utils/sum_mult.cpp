@@ -26,6 +26,10 @@
 
 #include <euler/utils/sum_mult.hpp>
 
+
+namespace euler::utils
+{
+
 unsigned int sum_mult(unsigned int max, unsigned int step)
 {
   int n = (max - 1) / step;
@@ -37,3 +41,5 @@ unsigned int sum_mult(unsigned int max, unsigned int step_a, int step_b)
 {
   return sum_mult(max, step_a) + sum_mult(max, step_b) - sum_mult(max, step_a * step_b);
 }
+
+} // end namespace euler::utils

@@ -15,6 +15,8 @@
 #include <functional> // std::negate
 #include <vector> // std::vector
 
+namespace euler::utils
+{
 
 /**
  * Find the factors of a number
@@ -124,3 +126,5 @@ std::vector<T> factor(T n, bool prime = false, bool includeNegative = false)
     // Return factors
     return facts;
 }
+
+} // end namespace euler::utils

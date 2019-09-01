@@ -13,6 +13,10 @@
 #include <vector>
 
 
+namespace euler::utils
+{
+
+
 std::vector<int> recurrence_up_to(int n, const std::function<int(int)>& fn, int start_a)
 {
     std::vector<int> v;
@@ -55,3 +59,5 @@ std::vector<int> fibonacci_up_to(int n)
 {
     return recurrence_up_to(n, std::plus<>(), 1, 2);
 }
+
+} // end namespace euler::utils

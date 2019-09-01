@@ -11,6 +11,10 @@
 #include <functional>
 #include <vector>
 
+
+namespace euler::utils
+{
+
 /**
  * Generate a vector from a recurrence relation which includes entries up to a given value.
  *
@@ -41,3 +45,5 @@ std::vector<int> recurrence_up_to(
  * @returns a vector
  */
 std::vector<int> fibonacci_up_to(int n);
+
+} // end namespace euler::utils

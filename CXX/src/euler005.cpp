@@ -13,14 +13,18 @@
 #include <euler/utils/maths.hpp>
 
 
+namespace euler
+{
+
 int euler005_example()
 {
-    return lcmRange(1, 10);
+    return utils::lcmRange(1, 10);
 }
 
 
 int euler005()
 {
-    return lcmRange(1, 20);
+    return utils::lcmRange(1, 20);
 }
 
+} // end namespace euler

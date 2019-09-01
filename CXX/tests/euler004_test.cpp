@@ -8,6 +8,10 @@
 
 #include <catch2/catch.hpp>
 
+
+namespace euler
+{
+
 // is_palindrome(num)
 TEST_CASE("Palindromic number: 1234321")
 {
@@ -37,3 +41,5 @@ TEST_CASE("Euler 004: Final answer is correct")
 {
     REQUIRE(euler004() == 906609);
 }
+
+} // end namespace euler

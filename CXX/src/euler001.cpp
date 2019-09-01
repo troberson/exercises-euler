@@ -33,13 +33,18 @@
 #include <euler/utils/sum_mult.hpp>
 
 
+namespace euler
+{
+
 unsigned int euler001_example()
 {
-  return sum_mult(10, 3, 5);
+  return utils::sum_mult(10, 3, 5);
 }
 
 
 unsigned int euler001()
 {
-  return sum_mult(1000, 3, 5);
+  return utils::sum_mult(1000, 3, 5);
 }
+
+} // end namespace euler

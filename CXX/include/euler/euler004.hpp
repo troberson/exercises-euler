@@ -12,6 +12,9 @@
 #pragma once
 
 
+namespace euler
+{
+
 /**
  * Check whether a number is a palindrome.
  *
@@ -55,3 +58,5 @@ int euler004_example();
  * @returns the solution to the problem
  */
 int euler004();
+
+} // end namespace euler

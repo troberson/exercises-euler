@@ -10,18 +10,24 @@
 
 #include <catch2/catch.hpp>
 
+
+namespace euler
+{
+
 // is_palindrome(str)
 TEST_CASE("A palidrome: kayak")
 {
-    REQUIRE(is_palindrome("kayak"));
+    REQUIRE(utils::is_palindrome("kayak"));
 }
 
 TEST_CASE("Not a palindrome: canoe")
 {
-    REQUIRE(!is_palindrome("canoe"));
+    REQUIRE(!utils::is_palindrome("canoe"));
 }
 
 TEST_CASE("An empty string is not a palindrome")
 {
-    REQUIRE(!is_palindrome(""));
+    REQUIRE(!utils::is_palindrome(""));
 }
+
+} // end namespace euler

@@ -8,6 +8,10 @@
 
 #include <catch2/catch.hpp>
 
+
+namespace euler
+{
+
 TEST_CASE("Euler 002: Example is correct")
 {
     std::vector<int> fibs = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 };
@@ -18,3 +22,5 @@ TEST_CASE("Euler 002: Final answer is correct")
 {
     REQUIRE(euler002() == 4613732);
 }
+
+} // end namespace euler

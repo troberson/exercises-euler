@@ -13,6 +13,9 @@
 #include <limits> // std::numeric_limits
 
 
+namespace euler::utils
+{
+
 /**
  * Check if a number is prime.
  *
@@ -95,3 +98,5 @@ T find_next_prime(T start)
     // return 0 if we hit the maximum of the type without reaching another prime number
     return 0;
 }
+
+} // end namespace euler::utils

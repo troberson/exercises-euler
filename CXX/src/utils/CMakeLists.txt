@@ -26,8 +26,8 @@ add_library(euler_utils
 # We need this directory, and users of our library will need it too
 target_include_directories(euler_utils PUBLIC ${Euler_SOURCE_DIR}/include)
 
-# All users of this library will need at least C++11
-target_compile_features(euler_utils PUBLIC cxx_std_11)
+# Use C++17
+target_compile_features(euler_utils PRIVATE cxx_std_17)
 
 # IDEs should put the headers in a nice place
 source_group(TREE "${PROJECT_SOURCE_DIR}/include" PREFIX "Header Files" FILES ${HEADER_LIST})

@@ -17,6 +17,9 @@
 #include <vector>
 
 
+namespace euler
+{
+
 /**
  * Solves the example problem.
  *
@@ -39,3 +42,5 @@ std::vector<int> euler002_example();
  * @returns the sum of the sequence
  */
 int euler002();
+
+} // end namespace euler

@@ -10,6 +10,10 @@
 
 #include <catch2/catch.hpp>
 
+
+namespace euler
+{
+
 /* Sum of even numbers below 10
  *
  * sum_mult(10, 2)
@@ -18,7 +22,7 @@
  *
  */
 TEST_CASE( "Sum of even numbers below 10" ) {
-    REQUIRE( sum_mult(10, 2) == 20 );
+    REQUIRE(utils::sum_mult(10, 2) == 20 );
 }
 
 /* Sum of numbers below 10 divisible by 2 or 3
@@ -31,5 +35,7 @@ TEST_CASE( "Sum of even numbers below 10" ) {
  * 20 + 18 - 6 (factor of both 2 and 3) = 32
  */
 TEST_CASE( "Sum of numbers below 10 divisible by 2 or 3" ) {
-    REQUIRE( sum_mult(10, 2, 3) == 32 );
+    REQUIRE(utils::sum_mult(10, 2, 3) == 32);
 }
+
+} // end namespace euler

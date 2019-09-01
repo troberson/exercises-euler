@@ -12,14 +12,19 @@
 #include <vector>
 
 
+namespace euler
+{
+
 std::vector<int> euler003_example()
 {
-   return factor(13195, true);
+   return utils::factor(13195, true);
 }
 
 
 int euler003()
 {
-    auto facts = factor(600851475143, true);
+    auto facts = utils::factor(600851475143, true);
     return facts.back();
 }
+
+} // end namespace euler

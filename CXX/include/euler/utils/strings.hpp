@@ -11,6 +11,9 @@
 #include <string>
 
 
+namespace euler::utils
+{
+
 /**
  * Check whether a string is a palindrome.
  *
@@ -24,3 +27,5 @@
  * @returns true if string is a palindrome, false otherwise
  */
 bool is_palindrome(std::string str);
+
+} // end namespace euler::utils

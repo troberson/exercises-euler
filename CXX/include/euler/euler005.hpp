@@ -13,6 +13,9 @@
 #pragma once
 
 
+namespace euler
+{
+
 /**
  * Solves the example problem.
  *
@@ -33,3 +36,5 @@ int euler005_example();
  * @returns the solution to the problem
  */
 int euler005();
+
+} // end namespace euler

@@ -13,9 +13,13 @@
 
 #include <string> // std::to_string
 
+
+namespace euler
+{
+
 bool is_palindrome(int num)
 {
-    return is_palindrome(std::to_string(num));
+    return utils::is_palindrome(std::to_string(num));
 }
 
 int find_largest_palindrome_product(int start, int end)
@@ -48,3 +52,5 @@ int euler004()
 {
     return find_largest_palindrome_product(100, 999);
 }
+
+} // end namespace euler

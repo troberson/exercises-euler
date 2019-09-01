@@ -8,6 +8,10 @@
 
 #include <catch2/catch.hpp>
 
+
+namespace euler
+{
+
 // euler005_example()
 TEST_CASE("Euler 005: Example is correct")
 {
@@ -19,3 +23,5 @@ TEST_CASE("Euler 005: Final answer is correct")
 {
     REQUIRE(euler005() == 232792560);
 }
+
+} // end namespace euler

@@ -11,6 +11,9 @@
 #include <catch2/catch.hpp>
 
 
+namespace euler
+{
+
 TEST_CASE("Euler 003: Example is correct")
 {
     std::vector<int> facts = { 5, 7, 13, 29 };
@@ -22,3 +25,5 @@ TEST_CASE("Euler 003: Final answer is correct")
 {
     REQUIRE(euler003() == 6857);
 }
+
+} // end namespace euler

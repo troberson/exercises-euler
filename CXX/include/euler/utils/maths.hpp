@@ -15,6 +15,9 @@
 #include <vector> // std::vector
 
 
+namespace euler::utils
+{
+
 /**
  * Greatest common divisor
  *
@@ -105,4 +108,6 @@ T lcmRange(T start, T end)
 
     return lcmList(nums);
 }
+
+} // end namespace euler::utils
 

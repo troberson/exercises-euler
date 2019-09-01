@@ -10,6 +10,10 @@
 
 #include <string> // std::string
 
+
+namespace euler::utils
+{
+
 bool is_palindrome(std::string str)
 {
     // an empty string is not a palindrome
@@ -32,3 +36,5 @@ bool is_palindrome(std::string str)
     // No inconsistencies found, must be a palindrome
     return true;
 }
+
+} // end namespace euler::utils

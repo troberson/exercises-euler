@@ -48,15 +48,20 @@
 #include <vector>
 
 
+namespace euler
+{
+
 std::vector<int> euler002_example()
 {
-    return fibonacci_up_to(100);
+    return utils::fibonacci_up_to(100);
 }
 
 
 int euler002()
 {
     auto genNext = [](int a, int b) { return 4 * a + b; };
-    auto v = recurrence_up_to(4000000, genNext, 2, 8);
+    auto v = utils::recurrence_up_to(4000000, genNext, 2, 8);
     return std::accumulate(v.begin(), v.end(), 0);
 }
+
+} // end namespace euler

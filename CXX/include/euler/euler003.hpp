@@ -11,6 +11,10 @@
 
 #include <vector>
 
+
+namespace euler
+{
+
 /**
  * Solves the example problem.
  *
@@ -29,3 +33,5 @@ std::vector<int> euler003_example();
  * @returns the solution to the problem
  */
 int euler003();
+
+} // end namespace euler

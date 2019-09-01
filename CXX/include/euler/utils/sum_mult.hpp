@@ -9,6 +9,9 @@
 #pragma once
 
 
+namespace euler::utils
+{
+
 /**
  * Sum the integers between 0 and the given max (exclusive)
  * which are multiples of `step`.
@@ -47,3 +50,5 @@ unsigned int sum_mult(unsigned int max, unsigned int step);
  * @returns sum of integers
  */
 unsigned int sum_mult(unsigned int max, unsigned int step_a, int step_b);
+
+} // end namespace euler::utils

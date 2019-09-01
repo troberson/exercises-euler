@@ -10,6 +10,10 @@
 
 #include <type_traits>
 
+
+namespace euler::utils
+{
+
 /**
  * Type alias to check if a template parameter is an integral.
  *
@@ -20,3 +24,5 @@
  */
 template <typename T>
 using IsIntegral = std::enable_if_t<std::is_integral_v<T>>;
+
+} // end namespace euler::utils
