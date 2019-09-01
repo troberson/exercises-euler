@@ -38,25 +38,25 @@ int sum_square_difference(int max)
 
 int euler006_example1()
 {
-    return utils::sum_of_squares(11); // 1-11 exclusive
+    return utils::sum_of_squares(10);
 }
 
 
 int euler006_example2()
 {
-    return square_of_sums(11); // 1-11 exclusive
+    return square_of_sums(10);
 }
 
 
 int euler006_example3()
 {
-    return sum_square_difference(11); // 1-11 exclusive
+    return sum_square_difference(10);
 }
 
 
 int euler006()
 {
-    return sum_square_difference(101); // 1-100 exclusive
+    return sum_square_difference(100);
 }
 
 } // end namespace euler

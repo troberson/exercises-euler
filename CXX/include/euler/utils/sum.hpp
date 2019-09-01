@@ -36,11 +36,11 @@ namespace euler::utils
 
 
 /**
- * Sum the integers between 0 and the given max (exclusive)
+ * Sum the integers between 0 and the given max (inclusive)
  * which are multiples of `step`.
  *
  * @rst
- * **Example:** `sum_mult(10, 2)`
+ * **Example:** `sum_mult(9, 2)`
  *
  * This returns 20 because the sum of multiples of 2 between 0 and
  * 10 are :math:`2 + 4 + 6 + 8 = 20`.
@@ -50,7 +50,7 @@ namespace euler::utils
  *   Providing a negative number for the maximum will calculate the result
  *   for that number up to 0 (the negation of the positive sum).
  *
- * @param max the maximum (exclusive) number to include in the sum
+ * @param max the maximum (inclusive) number to include in the sum
  * @param step include integers which are multiples of `step`
  * @returns sum of integers
  */
@@ -69,7 +69,7 @@ T sum_mult(T max, U step)
 
     // Gauss's formula
     //   Sn = n(n-1)/2
-    int n = (max - 1) / step;
+    int n = max / step;
     T result = step * n * (n + 1) / 2;
 
     // Return either the positive or negative result
@@ -78,17 +78,17 @@ T sum_mult(T max, U step)
 
 
 /**
- * Sum the integers between 0 and the given max (exclusive)
- * which are multiples of either `step_a` or `step_b`.
+ * Sum the integers between 0 and the given max (inclusive) which are
+ * multiples of either `step_a` or `step_b` but not both.
  *
  * @rst
- * **Example**: `sum_mult(10, 2, 3)`
+ * **Example**: `sum_mult(9, 2, 3)`
  *
  * This returns 32 because:
  *
  * .. math::
- *     2 +  4 + 6 + 8 & = 20 \text{ (sum of multiples of 2 between 0 and 10)}\\
- *     3 +  6 + 9     & = 18 \text{ (sum of multiples of 3 between 0 and 10)}\\
+ *     2 +  4 + 6 + 8 & = 20 \text{ (sum of multiples of 2 between 0 and 9)}\\
+ *     3 +  6 + 9     & = 18 \text{ (sum of multiples of 3 between 0 and 9)}\\
  *    20 + 18 - 6     & = 32 \text{ (add the sums and subtract 6, which is a factor of both)}
  * @endrst
  *
@@ -96,7 +96,7 @@ T sum_mult(T max, U step)
  *   Providing a negative number for the maximum will calculate the result
  *   for that number up to 0 (the negation of the positive sum).
  *
- * @param max the maximum (exclusive) number to include in the sum
+ * @param max the maximum (inclusive) number to include in the sum
  * @param step_a include integers which are multiples of `step_a`
  * @param step_b include integers which are multiples of `step_a`
  * @returns sum of integers
@@ -111,13 +111,13 @@ T sum_mult(T max, U step_a, U step_b)
 
 
 /**
- * Sum the integers between 0 and the given max (exclusive)
+ * Sum the integers between 0 and the given max (inclusive)
  *
  * @note
  *   Providing a negative number for the maximum will calculate the result
  *   for that number up to 0 (the negation of the positive sum).
  *
- * @param max the maximum (exclusive) number to include in the sum
+ * @param max the maximum (inclusive) number to include in the sum
  * @param step include integers which are multiples of `step`
  * @returns sum of integers
  */
@@ -130,13 +130,19 @@ T sum(T max)
 /**
  * Sum of squares
  *
- * @param max the maximum (exclusive) number to include in the sum
+ * Square all the natural numbers from 1 to `max` and find the sum.
+ *
+ * @param max the maximum (inclusive) number to include in the sum
  * @returns sum of squares
  */
 template <typename T, typename = IsIntegral<T>>
 T sum_of_squares(T max)
 {
-    max--;
+    // We're not actually squaring each number,
+    // which would make all positive, so we need
+    // to ensure we have a positive number for the
+    // formula.
+    max = std::abs(max);
 
     // This uses the forumula
     //     Sn = n(n + 1)(2n + 1)(1/6)

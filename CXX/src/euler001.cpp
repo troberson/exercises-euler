@@ -38,13 +38,13 @@ namespace euler
 
 unsigned int euler001_example()
 {
-  return utils::sum_mult(10, 3, 5);
+  return utils::sum_mult(9, 3, 5);
 }
 
 
 unsigned int euler001()
 {
-  return utils::sum_mult(1000, 3, 5);
+  return utils::sum_mult(999, 3, 5);
 }
 
 } // end namespace euler
