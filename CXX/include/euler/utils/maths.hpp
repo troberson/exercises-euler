@@ -10,6 +10,7 @@
 
 #include "template_types.hpp"
 
+#include <cmath> // std::abs
 #include <numeric> // std::accumulate, std::iota
 #include <vector> // std::vector
 
@@ -17,8 +18,14 @@
 /**
  * Greatest common divisor
  *
+ * @note
  * There is an STL function std::gcd in <numeric>.
  * This function is for educational purposes.
+ *
+ * @note
+ * Mathematically, `gcd(0,0)` is undefined.
+ * However, rather than throw an exception, this function
+ * simply returns 0.
  *
  * @param a an integral
  * @param b an integral
@@ -31,6 +38,12 @@ T gcd(T a, T b)
     {
         return a;
     }
+
+    // gcd for negative values is the same as for the positive
+    // finding the absolute value of the values here ensure that
+    // we do not break at -1 instead of 1.
+    a = std::abs(a);
+    b = std::abs(b);
 
     return gcd(b, a % b);
 }
@@ -48,7 +61,19 @@ T gcd(T a, T b)
 template <typename T, typename = IsIntegral<T>>
 T lcm(T a, T b)
 {
-    return a * (b / gcd(a, b));
+    if (a == 0 && b == 0)
+    {
+        return 0;
+    }
+
+    T divisor = gcd(a, b);
+
+    if (divisor == 0)
+    {
+        return 0;
+    }
+
+    return a * (b / divisor);
 }
 
 
@@ -80,3 +105,4 @@ T lcmRange(T start, T end)
 
     return lcmList(nums);
 }
+
