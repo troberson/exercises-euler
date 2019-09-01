@@ -99,4 +99,24 @@ T find_next_prime(T start)
     return 0;
 }
 
+
+/**
+ * Find Nth prime number
+ *
+ * @param n the number of the prime to find
+ * @returns the Nth prime
+ */
+template <typename T, typename = IsIntegral<T>>
+T find_nth_prime(int n)
+{
+    T prime = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        prime = find_next_prime(prime);
+    }
+
+    return prime;
+}
+
 } // end namespace euler::utils
