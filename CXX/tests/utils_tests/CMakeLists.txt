@@ -4,7 +4,7 @@ add_executable(euler_utils_test
     maths_test.cpp
     primes_test.cpp
     strings_test.cpp
-    sum_mult_test.cpp
+    sum_test.cpp
     recurrence_test.cpp
 )
 

@@ -30,7 +30,7 @@
  * 5*199*20=0/5, and for 15, 15*66*67/2.
  */
 
-#include <euler/utils/sum_mult.hpp>
+#include <euler/utils/sum.hpp>
 
 
 namespace euler
