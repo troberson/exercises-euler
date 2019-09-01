@@ -34,6 +34,7 @@
 namespace euler::utils
 {
 
+
 /**
  * Sum the integers between 0 and the given max (exclusive)
  * which are multiples of `step`.
@@ -53,8 +54,10 @@ namespace euler::utils
  * @param step include integers which are multiples of `step`
  * @returns sum of integers
  */
-template <typename T, typename = IsIntegral<T>>
-T sum_mult(T max, T step)
+template <
+    typename T, typename U,
+    typename = IsIntegral<T>, typename = IsIntegral<U>>
+T sum_mult(T max, U step)
 {
     // The sum of negative numbers up to 0 is the
     // same as 0 up to that number, except negative.
@@ -65,6 +68,7 @@ T sum_mult(T max, T step)
     step = std::abs(step);
 
     // Gauss's formula
+    //   Sn = n(n-1)/2
     int n = (max - 1) / step;
     T result = step * n * (n + 1) / 2;
 
@@ -97,10 +101,46 @@ T sum_mult(T max, T step)
  * @param step_b include integers which are multiples of `step_a`
  * @returns sum of integers
  */
-template <typename T, typename = IsIntegral<T>>
-T sum_mult(T max, T step_a, T step_b)
+template <
+    typename T, typename U,
+    typename = IsIntegral<T>, typename = IsIntegral<U>>
+T sum_mult(T max, U step_a, U step_b)
 {
   return sum_mult(max, step_a) + sum_mult(max, step_b) - sum_mult(max, step_a * step_b);
+}
+
+
+/**
+ * Sum the integers between 0 and the given max (exclusive)
+ *
+ * @note
+ *   Providing a negative number for the maximum will calculate the result
+ *   for that number up to 0 (the negation of the positive sum).
+ *
+ * @param max the maximum (exclusive) number to include in the sum
+ * @param step include integers which are multiples of `step`
+ * @returns sum of integers
+ */
+template <typename T, typename = IsIntegral<T>>
+T sum(T max)
+{
+    return sum_mult(max, 1);
+}
+
+/**
+ * Sum of squares
+ *
+ * @param max the maximum (exclusive) number to include in the sum
+ * @returns sum of squares
+ */
+template <typename T, typename = IsIntegral<T>>
+T sum_of_squares(T max)
+{
+    max--;
+
+    // This uses the forumula
+    //     Sn = n(n + 1)(2n + 1)(1/6)
+    return (max * (max + 1) * (2 * max + 1))/6;
 }
 
 } // end namespace euler::utils
