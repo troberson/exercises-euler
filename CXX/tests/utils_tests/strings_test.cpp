@@ -30,4 +30,19 @@ TEST_CASE("An empty string is not a palindrome")
     REQUIRE(!utils::is_palindrome(""));
 }
 
+
+// char_to_int(c)
+TEST_CASE("'1' converts to 1")
+{
+    REQUIRE(utils::char_to_int('1') == 1);
+}
+
+
+// string_to_num_list(str)
+TEST_CASE("'12345' converts to {1, 2, 3, 4, 5}")
+{
+    std::vector<int> nums = {1, 2, 3, 4, 5};
+    REQUIRE(utils::string_to_num_list("12345") == nums);
+}
+
 } // end namespace euler

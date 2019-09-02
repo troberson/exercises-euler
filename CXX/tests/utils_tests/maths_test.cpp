@@ -69,4 +69,12 @@ TEST_CASE("Least common multiple of 10 to 15 is 60060")
     REQUIRE(utils::lcmRange(10, 15) == 60060);
 }
 
+
+// product(vect)
+TEST_CASE("The product of the numbers 1 to 5 is 120")
+{
+    auto nums = std::vector<int> { 1, 2, 3, 4, 5 };
+    REQUIRE(utils::product<int>(nums) == 120);
+}
+
 } // end namespace euler

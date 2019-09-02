@@ -8,7 +8,8 @@
 
 #pragma once
 
-#include <string>
+#include <string> // std::string
+#include <vector> // std:::vector
 
 
 namespace euler::utils
@@ -27,5 +28,27 @@ namespace euler::utils
  * @returns true if string is a palindrome, false otherwise
  */
 bool is_palindrome(std::string str);
+
+
+/**
+ * Convert a character to an integer
+ *
+ * @note This is a replacement for the traditional C-style
+ *   std::atoi() which will throw an std::invalid_argument
+ *   exception on invalid input, rather than returning 0.
+ *
+ * @param c a digit character
+ * @returns an integer
+ */
+int char_to_int(char c);
+
+
+/**
+ * Convert a string of digits to a list of numbers
+ *
+ * @param str a string of digits
+ * @returns a list of numbers
+ */
+std::vector<int> string_to_num_list(std::string str);
 
 } // end namespace euler::utils

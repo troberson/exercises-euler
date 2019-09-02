@@ -109,5 +109,20 @@ T lcmRange(T start, T end)
     return lcmList(nums);
 }
 
+
+/**
+ * Product of a vector.
+ *
+ * @param a vector of numbers
+ * @returns the product
+ */
+template <
+    typename T, typename U,
+    typename = IsArithmetic<T>, typename = IsArithmetic<U>>
+T product(std::vector<U> vect)
+{
+    return std::accumulate(vect.begin(), vect.end(), static_cast<T>(1), std::multiplies<>());
+}
+
 } // end namespace euler::utils
 

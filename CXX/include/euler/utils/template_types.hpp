@@ -15,6 +15,17 @@ namespace euler::utils
 {
 
 /**
+ * Type alias to check if a template parameter is a number.
+ *
+ * The function this is applied to will only be enabled if given
+ * a numeric parameter.
+ *
+ * @tparam T the type of the number
+ */
+template <typename T>
+using IsArithmetic = std::enable_if_t<std::is_arithmetic_v<T>>;
+
+/**
  * Type alias to check if a template parameter is an integral.
  *
  * The function this is applied to will only be enabled if given
