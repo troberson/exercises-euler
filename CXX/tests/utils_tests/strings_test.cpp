@@ -8,6 +8,9 @@
 
 #include <euler/utils/strings.hpp>
 
+#include <string> // std::string
+#include <vector> // std::vector
+
 #include <catch2/catch.hpp>
 
 
@@ -43,6 +46,14 @@ TEST_CASE("'12345' converts to {1, 2, 3, 4, 5}")
 {
     std::vector<int> nums = {1, 2, 3, 4, 5};
     REQUIRE(utils::string_to_num_list("12345") == nums);
+}
+
+// read_number_grid(grid_str, row_length)
+TEST_CASE("Number grid '1 2 3 4' converts to {{1, 2}, {3, 4}}")
+{
+    auto nums_str = std::string("1 2 3 4");
+    std::vector<std::vector<int>> nums = {{1, 2}, {3, 4}};
+    REQUIRE(utils::read_number_grid(nums_str, 2) == nums);
 }
 
 } // end namespace euler

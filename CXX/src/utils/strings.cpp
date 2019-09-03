@@ -9,6 +9,7 @@
 #include <euler/utils/strings.hpp>
 
 #include <algorithm> // std::transform
+#include <sstream> // std::istringstream
 #include <string> // std::string
 #include <vector> // std::vector
 
@@ -52,6 +53,33 @@ std::vector<int> string_to_num_list(std::string str)
         std::back_inserter(nums), char_to_int);
 
     return nums;
+}
+
+
+number_grid read_number_grid(const std::string& grid_str, int cols)
+{
+    std::vector<std::vector<int>> grid;
+    std::istringstream grid_stream(grid_str);
+    std::string num_str;
+
+    for (int n = 0; grid_stream >> num_str; n++)
+    {
+        std::vector<int> row;
+
+        // Start new row
+        if (n % cols == 0)
+        {
+            grid.push_back(row);
+        }
+
+        // Convert the word to a number
+        int num = std::stoi(num_str);
+
+        // Add it to the row
+        grid.back().push_back(num);
+    }
+
+    return grid;
 }
 
 } // end namespace euler::utils

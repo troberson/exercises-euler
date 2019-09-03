@@ -51,4 +51,26 @@ int char_to_int(char c);
  */
 std::vector<int> string_to_num_list(std::string str);
 
+/**
+ * Number grid
+ *
+ * A vector of vectors containing integers.
+ * Rows are not guaranteed to all be the same length.
+ */
+using number_grid = std::vector<std::vector<int>>;
+
+/**
+ * Read number grid
+ *
+ * Convert a grid of numbers into a two-dimensional vector.
+ * The format should be a long list of integers separated
+ * by spaces. The `cols` parameter specifies how many columns
+ * each of the rows should be. The last row may be short.
+ *
+ * @param grid_str a string representation of the grid
+ * @param row_length the length of each row
+ * @returns a vector of vectors representing the grid
+ */
+ number_grid read_number_grid(const std::string& grid_str, int col);
+
 } // end namespace euler::utils
