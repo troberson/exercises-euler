@@ -11,6 +11,7 @@ add_library(euler
     euler006.cpp
     euler007.cpp
     euler008.cpp
+    euler009.cpp
 )
 
 # Use C++17

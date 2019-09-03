@@ -29,6 +29,8 @@
 #include "template_types.hpp"
 
 #include <cmath> // std::abs
+#include <numeric> // std::accumulate
+#include <vector> // std::vector
 
 
 namespace euler::utils
@@ -118,13 +120,30 @@ T sum_mult(T max, U step_a, U step_b)
  *   for that number up to 0 (the negation of the positive sum).
  *
  * @param max the maximum (inclusive) number to include in the sum
- * @param step include integers which are multiples of `step`
  * @returns sum of integers
  */
 template <typename T, typename = IsIntegral<T>>
 T sum(T max)
 {
     return sum_mult(max, 1);
+}
+
+
+/**
+ * Sum a vector of numbers
+ *
+ * @tparam T the output type
+ * @tparam U the input type
+ * @param vect a vector of numbers
+ * @returns sum of numbers
+ */
+template <
+    typename T, typename U,
+    typename = IsArithmetic<T>, typename = IsArithmetic<U>>
+T sum(std::vector<U> vect)
+{
+    return std::accumulate(vect.begin(), vect.end(),
+        static_cast<T>(0), std::plus<>());
 }
 
 /**

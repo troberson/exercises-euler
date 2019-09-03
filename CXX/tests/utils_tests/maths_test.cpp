@@ -8,6 +8,8 @@
 
 #include <euler/utils/maths.hpp>
 
+#include <cmath> // std::sqrt
+#include <limits> // std::numeric_limits
 #include <vector> // std::vector
 
 #include <catch2/catch.hpp>
@@ -75,6 +77,60 @@ TEST_CASE("The product of the numbers 1 to 5 is 120")
 {
     auto nums = std::vector<int> { 1, 2, 3, 4, 5 };
     REQUIRE(utils::product<int>(nums) == 120);
+}
+
+
+// generate_pythagorean_triplet(m, n)
+TEST_CASE("Pythagorean triplets cannot be generated with negative numbers")
+{
+    REQUIRE_THROWS(utils::generate_pythagorean_triplet<int>(-1, -2));
+}
+
+TEST_CASE(
+    "Pythagorean triplets cannot be generated with the first parameter " \
+    "less than or equal to the second"
+)
+{
+    REQUIRE_THROWS(utils::generate_pythagorean_triplet<int>(1, 2));
+}
+
+TEST_CASE(
+    "Throw if the output type is not large enough to hold the result"
+)
+{
+    // Find the max for int64_t
+    auto max = std::numeric_limits<int64_t>::max();
+
+    // The largest value of the formula is 2 * m * n,
+    // so find the square root of half the max to find
+    // the largest possible value of m for an int64_t.
+    auto m = static_cast<int64_t>(std::ceil(std::sqrt(max / 2)));
+
+    // m and m - 1 should be the largest values possible,
+    // so m + 1 and m should be too large
+    REQUIRE_THROWS(utils::generate_pythagorean_triplet<int64_t>(m + 1, m));
+}
+
+TEST_CASE(
+    "Do not throw if the output type is large enough to hold the result"
+)
+{
+    // Find the max for int64_t
+    auto max = std::numeric_limits<int64_t>::max();
+
+    // The largest value of the formula is 2 * m * n,
+    // so find the square root of half the max to find
+    // the largest possible value of m for an int64_t.
+    auto m = static_cast<int64_t>(std::ceil(std::sqrt(max / 2)));
+
+    // m and m - 1 should be the largest values possible
+    REQUIRE_NOTHROW(utils::generate_pythagorean_triplet<int64_t>(m, m - 1));
+}
+
+TEST_CASE("The Pythagorean triplet generated with m = 2 and n = 1 is { 3, 4, 5 }")
+{
+    auto nums = std::vector<int> { 3, 4, 5 };
+    REQUIRE(utils::generate_pythagorean_triplet<int>(2, 1) == nums);
 }
 
 } // end namespace euler
