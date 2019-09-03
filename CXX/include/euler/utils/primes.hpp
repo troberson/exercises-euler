@@ -11,6 +11,7 @@
 #include "template_types.hpp"
 
 #include <limits> // std::numeric_limits
+#include <vector> // std::vector
 
 
 namespace euler::utils
@@ -117,6 +118,60 @@ T find_nth_prime(int n)
     }
 
     return prime;
+}
+
+/**
+ * Find all prime numbers below a given number.
+ *
+ * @tparam T the output type
+ * @tparam U the input type
+ * @param max the highest value of the prime numbers to find
+ * @returns a vector of prime numbers
+ */
+template <
+    typename T, typename U,
+    typename = IsIntegral<T>, typename = IsIntegral<U>>
+std::vector<T> primes_up_to(U max)
+{
+    // If max is 0 or negative, return an empty vector.
+    if (max <= 0) {
+        return {};
+    }
+
+    std::vector<T> primes;
+    std::vector<bool> sieve(max);
+
+    // The first prime number is 2
+    // we can only address odd numbers
+    primes.push_back(2);
+
+    // Walk through the sieve
+    for (T i = 3; i < max; i += 2) {
+
+        // Skip if already crossed off as composite
+        if (sieve.at(i))
+        {
+            continue;
+        }
+
+        // Number is prime, add to list
+        primes.push_back(i);
+
+        // If the square of the number is greater than the maximum,
+        // we don't need to look for multiples
+        if (i * i > max)
+        {
+            continue;
+        }
+
+        // Register all multiples of the prime as not prime
+        for (T j = i * i; j < sieve.size(); j += i)
+        {
+            sieve.at(j) = true;
+        }
+    }
+
+   return primes;
 }
 
 } // end namespace euler::utils

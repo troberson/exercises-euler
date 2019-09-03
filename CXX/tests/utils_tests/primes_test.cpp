@@ -8,6 +8,8 @@
 
 #include <euler/utils/primes.hpp>
 
+#include <vector> // std::vector
+
 #include <catch2/catch.hpp>
 
 
@@ -50,5 +52,14 @@ TEST_CASE("There are no prime numbers between 251 and 255 (uint8_t aka byte)")
 {
     REQUIRE(utils::find_next_prime((uint8_t) 251) == (uint8_t) 0);
 }
+
+
+// primes_up_to(max)
+TEST_CASE("The primes below 20 are { 2, 3, 5, 7, 11, 13, 17, 19 }")
+{
+    auto nums = std::vector<int> { 2, 3, 5, 7, 11, 13, 17, 19 };
+    REQUIRE(utils::primes_up_to<int>(20) == nums);
+}
+
 
 } // end namespace euler
