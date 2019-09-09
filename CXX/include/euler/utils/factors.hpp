@@ -84,14 +84,14 @@ std::vector<T> factor(T n, bool prime = false, bool includeNegative = false)
             }
 
             // Add the factor to the list
-            facts.push_back(i);
-
-            // Only consider the numbers needed to
+            // Reduce max so we only consider the numbers needed to
             // complete the product
-            max /= i;
-        }
-        else // Regular factor check
-        {
+            while (max % i == 0)
+            {
+                facts.push_back(i);
+                max /= i;
+            }
+        } else { // Regular factor check
             // Add the factor to the list
             facts.push_back(i);
 
@@ -125,6 +125,21 @@ std::vector<T> factor(T n, bool prime = false, bool includeNegative = false)
 
     // Return factors
     return facts;
+}
+
+
+/**
+ * Find the prime factors of a number
+ *
+ * Equivalent to `factor(n, true, false)`.
+ *
+ * @param n the number to factor
+ * @returns the factors
+ */
+template <typename T, typename = IsIntegral<T>>
+std::vector<T> find_prime_factors(T n)
+{
+    return factor(n, true, false);
 }
 
 } // end namespace euler::utils

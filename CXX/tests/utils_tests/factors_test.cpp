@@ -43,20 +43,27 @@ TEST_CASE("Factors of 10, including negatives")
 TEST_CASE("Prime factors of 21")
 {
     std::vector<int> facts = { 3, 7 };
-    REQUIRE(utils::factor(21, true) == facts);
+    REQUIRE(utils::find_prime_factors(21) == facts);
 }
 
 TEST_CASE("Prime factors of -1")
 {
-    REQUIRE(utils::factor(-1, true).empty());
+    REQUIRE(utils::find_prime_factors(-1).empty());
 }
+
+// example of multiples of prime factors
+TEST_CASE("Prime factors of 72")
+{
+    std::vector<int> results{2, 2, 2, 3, 3};
+    REQUIRE(utils::find_prime_factors(72) == results);
+}
+
 
 TEST_CASE("Prime Factors of 600851475143")
 {
-    auto n = 600851475143;
-    std::vector<decltype(n)> facts = {
-        71, 839, 1471, 6857 };
-    REQUIRE(utils::factor(n, true) == facts);
+    int64_t n = 600851475143;
+    std::vector<int64_t> facts = { 71, 839, 1471, 6857 };
+    REQUIRE(utils::find_prime_factors(n) == facts);
 }
 
 } // end namespace euler
