@@ -7,6 +7,7 @@
 set(header_dir "${Euler_SOURCE_DIR}/include/euler/utils/")
 set(HEADER_LIST
     ${header_dir}/factors.hpp
+    ${header_dir}/lists.hpp
     ${header_dir}/maths.hpp
     ${header_dir}/primes.hpp
     ${header_dir}/strings.hpp
