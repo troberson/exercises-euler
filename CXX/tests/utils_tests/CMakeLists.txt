@@ -3,6 +3,7 @@ add_executable(euler_utils_test
     TriangleNumberGenerator_test.cpp
     factors_test.cpp
     lists_test.cpp
+    maps_test.cpp
     maths_test.cpp
     primes_test.cpp
     strings_test.cpp
