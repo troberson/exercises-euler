@@ -56,4 +56,40 @@ TEST_CASE("Number grid '1 2 3 4' converts to {{1, 2}, {3, 4}}")
     REQUIRE(utils::read_number_grid(nums_str, 2) == nums);
 }
 
+
+// split_string(str, pos)
+TEST_CASE("Strings: split_string()")
+{
+    std::string empty{};
+    std::string digits{"0123456789"};
+
+    SECTION("empty string")
+    {
+        auto [ output1, output2 ] = utils::split_string(empty, 1);
+        REQUIRE(output1.empty());
+        REQUIRE(output2.empty());
+    }
+
+    SECTION("normal string")
+    {
+        auto [output1, output2] = utils::split_string(digits, 5);
+        REQUIRE(output1 == "01234");
+        REQUIRE(output2 == "56789");
+    }
+
+    SECTION("negative position")
+    {
+        auto [output1, output2] = utils::split_string(digits, -3);
+        REQUIRE(output1 == "0123456");
+        REQUIRE(output2 == "789");
+    }
+
+    SECTION("position past end")
+    {
+        auto [output1, output2] = utils::split_string(digits, 20);
+        REQUIRE(output1 == digits);
+        REQUIRE(output2.empty());
+    }
+}
+
 } // end namespace euler

@@ -8,7 +8,7 @@
 
 #include <euler/utils/strings.hpp>
 
-#include <algorithm> // std::transform
+#include <algorithm> // std::clamp, std::transform
 #include <sstream> // std::istringstream
 #include <string> // std::string
 #include <vector> // std::vector
@@ -80,6 +80,26 @@ number_grid read_number_grid(const std::string& grid_str, int cols)
     }
 
     return grid;
+}
+
+
+std::pair<std::string, std::string> split_string(const std::string& str, int pos)
+{
+    // If position is negative, count from the end
+    if (pos < 0)
+    {
+        pos = str.length() + pos;
+    }
+
+    // Ensure that position is valid
+    pos = std::clamp(pos, 0, static_cast<int>(str.length()));
+
+    // Split the string
+    auto part_a = str.substr(0, pos);
+    auto part_b = str.substr(pos, str.length());
+
+    // Return the pair of strings
+    return {part_a, part_b};
 }
 
 } // end namespace euler::utils

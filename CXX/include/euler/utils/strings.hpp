@@ -73,4 +73,21 @@ using number_grid = std::vector<std::vector<int>>;
  */
  number_grid read_number_grid(const std::string& grid_str, int col);
 
+
+/**
+ * Split string
+ *
+ * Split a string into a pair of strings at the
+ * given position.
+ *
+ * @note
+ *  If the position is negative, the string is split
+ *  counting from the end.
+ *
+ * @param str a string
+ * @param pos the position to split at
+ * @returns a pair of strings
+ */
+std::pair<std::string, std::string> split_string(const std::string& str, int pos);
+
 } // end namespace euler::utils
