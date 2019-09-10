@@ -66,4 +66,23 @@ TEST_CASE("Prime Factors of 600851475143")
     REQUIRE(utils::find_prime_factors(n) == facts);
 }
 
+
+TEST_CASE("Factors: count_factors()")
+{
+    SECTION("There are 0 factors of 0")
+    {
+        REQUIRE(utils::count_factors(0) == 0);
+    }
+
+    SECTION("There are 2 factors of 13 (1 and 13)")
+    {
+        REQUIRE(utils::count_factors(13) == 2);
+    }
+
+    SECTION("There are 8 factors of 42 (1, 2, 3, 6, 7, 14, 21, 42)")
+    {
+        REQUIRE(utils::count_factors(42) == 8);
+    }
+}
+
 } // end namespace euler

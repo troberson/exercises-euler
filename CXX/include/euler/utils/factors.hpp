@@ -8,11 +8,14 @@
 
 #pragma once
 
+#include "lists.hpp" // utils::count_occurrences
+#include "maps.hpp" // utils::get_map_values
 #include "primes.hpp"
 #include "template_types.hpp"
 
 #include <algorithm> // std::sort, std::transform
-#include <functional> // std::negate
+#include <functional> // std::multiplies, std::negate
+#include <numeric> // std::reduce
 #include <vector> // std::vector
 
 namespace euler::utils
@@ -140,6 +143,53 @@ template <typename T, typename = IsIntegral<T>>
 std::vector<T> find_prime_factors(T n)
 {
     return factor(n, true, false);
+}
+
+/**
+ * Count the number of factors of a number
+ *
+ * This uses an algorithm to calculate the number of factors
+ * of a given number by only finding the prime fators. This
+ * should be faster for large numbers than finding what the
+ * factors actually are and then counting them.
+ *
+ * @rst
+ * If a given number `n` has prime factors
+ * :math:`p_0` to :math:`p_z` such that
+ *
+ * .. math::
+ *     n = (p_0) ^ {x_0} \cdot (p_1) ^ {x_1} \cdot\: \cdots\: \cdot (p_z) ^ {x_z}
+ *
+ * then the total number of factors is the product
+ * :math:`(x_0 + 1)(x_1 + 1) \cdots (x_z + 1)`.
+ * @endrst
+ *
+ * @tparam T the type of the number
+ * @param n a nonzero natural number to factor
+ */
+template <typename T, typename = IsIntegral<T>>
+T count_factors(T n)
+{
+    // Return 0 for numbers 0 or less
+    if (n <= 0)
+    {
+        return 0;
+    }
+
+    // Find how many times each prime factor occurs
+    auto prime_factors = find_prime_factors(n);
+    auto occurrences = utils::count_occurrences<int>(prime_factors.begin(), prime_factors.end());
+    auto num_occurrences = utils::get_map_values(occurrences);
+
+    // The number of factors is equal to the product of one more than the
+    // number of occurrences of each prime factor
+    auto num_factors = std::transform_reduce(
+        num_occurrences.begin(), num_occurrences.end(),
+        1, std::multiplies<>(), [](auto n) { return n + 1; }
+    );
+
+    // Return the number of factors calculated
+    return num_factors;
 }
 
 } // end namespace euler::utils
