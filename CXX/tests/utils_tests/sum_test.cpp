@@ -3,10 +3,13 @@
  * Tamara Roberson <tamara.roberson@gmail.com>
  * Copyright (c) 2019 Tamara Roberson
  *
- * Returns the sum of a series of integers which are muliples of a number
+ * Functions to sum numbers in specialized ways.
  */
 
 #include <euler/utils/sum.hpp>
+
+#include <string> // std::string
+#include <vector> // std::vector
 
 #include <catch2/catch.hpp>
 
@@ -62,6 +65,41 @@ TEST_CASE("Sum of negative even integers from -9 to 0")
 TEST_CASE("Sum of negative integers from -9 to 0 which are divisible by 2 or 3")
 {
     REQUIRE(utils::sum_mult(-9, 2, 3) == -32);
+}
+
+
+// sum_big_ints()
+TEST_CASE("Sum: sum_big_ints()")
+{
+    std::vector<std::string> empty{};
+
+    std::vector<std::string> digits{
+        "1111111111",
+        "2222222222",
+        "3333333333",
+        "4444444444",
+        "5555555555",
+        "6666666666",
+        "7777777777",
+        "8888888888",
+        "9999999999"};
+
+    SECTION("empty list")
+    {
+        REQUIRE(utils::sum_big_ints(empty) == "0");
+    }
+
+    SECTION("normal sum")
+    {
+        REQUIRE(utils::sum_big_ints(digits) == "49999999995");
+    }
+
+    SECTION("irregular length")
+    {
+        auto digits_bad = digits;
+        digits_bad.emplace_back("123");
+        REQUIRE_THROWS(utils::sum_big_ints(digits_bad));
+    }
 }
 
 } // end namespace euler

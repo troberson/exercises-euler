@@ -20,6 +20,7 @@ set(HEADER_LIST
 # Make an automatic library - will be static or dynamic based on user setting
 add_library(euler_utils
     strings.cpp
+    sum.cpp
     recurrence.cpp
     ${HEADER_LIST}
 )

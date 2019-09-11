@@ -3,10 +3,23 @@
  * Tamara Roberson <tamara.roberson@gmail.com>
  * Copyright (c) 2019 Tamara Roberson
  *
- * Sum a range of integers, optionally only those which are the muliples of a
- * number.
- * -----
- *
+ * Functions to sum numbers in specialized ways.
+ */
+
+#pragma once
+
+#include "template_types.hpp"
+
+#include <cmath> // std::abs
+#include <numeric> // std::accumulate
+#include <string> // std::string
+#include <vector> // std::vector
+
+
+namespace euler::utils
+{
+
+/*
  * These methods use strategy attributed to the child Gauss for finding the
  * sum of a series of natural numbers: n(n-1)/2. So, for example, the sum of
  * the numbers 1 to 100 are 100*101/2 = 5050.
@@ -23,18 +36,6 @@
  * Principle of Inclusion-Exclusion and alternately subtract and add sums as
  * required.
  */
-
-#pragma once
-
-#include "template_types.hpp"
-
-#include <cmath> // std::abs
-#include <numeric> // std::accumulate
-#include <vector> // std::vector
-
-
-namespace euler::utils
-{
 
 
 /**
@@ -167,5 +168,18 @@ T sum_of_squares(T max)
     //     Sn = n(n + 1)(2n + 1)(1/6)
     return (max * (max + 1) * (2 * max + 1))/6;
 }
+
+
+/**
+ * Sum big integers.
+ *
+ * Sums a list of big integers represented by a
+ * vector of strings. The integers must all be the
+ * same length or zero-padded.
+ *
+ * @param nums a list of strings representing integers
+ * @returns a string representation of the sum
+ */
+std::string sum_big_ints(std::vector<std::string> nums);
 
 } // end namespace euler::utils
